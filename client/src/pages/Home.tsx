@@ -15,7 +15,7 @@ import "../App.css";
 function Home() {
 	return (
 		<>
-			<Heading>Hello world</Heading>
+			<Heading size="xxl">Welcome to the CarWorld Online Megastore !</Heading>
 		</>
 	);
 }

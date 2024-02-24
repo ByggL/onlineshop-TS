@@ -1,27 +1,21 @@
 const express = require("express");
 const app = express();
 
+const cars = require("./data/cars.json");
+const parts = require("./data/parts.json");
+
 function fetchJSONData(filename: string) {
-	fetch("./sample.json")
-		.then((res) => {
-			if (!res.ok) {
-				throw new Error
-					(`HTTP error! Status: ${res.status}`);
-			}
-			return res.json();
-		})
-		.then((data) => 
-			  console.log(data))
-		.catch((error) => 
-			   console.error("Unable to fetch data:", error));
+	fetch(filename)
+  		.then(response => response.json())
+  		.then(json => console.log(json));
 }
 
 app.get("/api/cars", (req: any, res: any) => {
-	res.json(fetchJSONData("./data/cars.json"));
+	res.json(cars); 
 });
 
 app.get("/api/parts", (req: any, res: any) => {
-	res.json(fetchJSONData("./data/parts.json"));
+	res.json(parts);
 });
 
 app.listen(5000, () => {

@@ -7,21 +7,27 @@ import "./App.css";
 import Home from "./pages/Home";
 
 function App() {
-	const [backendData, setBackendData] = useState([{}]);
+	const [carsData, setcarsData] = useState([{}]);
+	const [partsData, setpartsData] = useState([{}]);
 	const [isLoading, setLoading] = useState(true);
 
 	useEffect(() => {
-		fetch("/api")
+		fetch("/api/cars")
 			.then((response) => response.json())
 			.then((data) => {
-				setBackendData(data);
-				setLoading(false);
-				console.log(data.skills);
-				console.log(Object.entries(data.skills));
+				setcarsData(data);
 			});
 	}, []);
 
-	if (isLoading) {
+	useEffect(() => {
+		fetch("/api/parts")
+			.then((response) => response.json())
+			.then((data) => {
+				setpartsData(data);
+			});
+	}, []);
+
+	if (!(partsData && carsData)) {
 		return (
 			<Heading className="App" size="7xl">
 				Loading...
