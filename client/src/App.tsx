@@ -5,11 +5,12 @@ import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 import "./App.css";
 import Home from "./pages/Home";
+import Cars from "./pages/Cars";
+import Parts from "./pages/Parts";
 
 function App() {
 	const [carsData, setcarsData] = useState([{}]);
 	const [partsData, setpartsData] = useState([{}]);
-	const [isLoading, setLoading] = useState(true);
 
 	useEffect(() => {
 		fetch("/api/cars")
@@ -40,6 +41,8 @@ function App() {
 			<Header />
 			<Routes>
 				<Route path="/" element={<Home />} />
+				<Route path="/cars" element={<Cars />} />
+				<Route path="/parts" element={<Parts />} />
 			</Routes>
 			<Footer />
 		</BrowserRouter>

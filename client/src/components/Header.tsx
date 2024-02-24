@@ -8,6 +8,7 @@ import {
 	BreadcrumbLink,
 } from "@chakra-ui/react";
 import React from "react";
+import Navbar from "./Navbar";
 
 export function Header() {
 	return (
@@ -20,37 +21,7 @@ export function Header() {
 						</Heading>
 					</a>
 				</Center>
-				<Breadcrumb>
-					<BreadcrumbItem>
-						<BreadcrumbLink href="/">Home</BreadcrumbLink>
-					</BreadcrumbItem>
-
-					<BreadcrumbItem>
-						<BreadcrumbLink href="/formation">
-							Formation
-						</BreadcrumbLink>
-					</BreadcrumbItem>
-
-					<BreadcrumbItem>
-						<BreadcrumbLink href="/experience">
-							Expérience
-						</BreadcrumbLink>
-					</BreadcrumbItem>
-
-					<BreadcrumbItem>
-						<BreadcrumbLink href="/competences">
-							Compétences
-						</BreadcrumbLink>
-					</BreadcrumbItem>
-
-					<BreadcrumbItem>
-						<BreadcrumbLink href="/autres">Autres</BreadcrumbLink>
-					</BreadcrumbItem>
-
-					<BreadcrumbItem>
-						<BreadcrumbLink href="/contact">Contact</BreadcrumbLink>
-					</BreadcrumbItem>
-				</Breadcrumb>
+				<Navbar/>
 				<HStack m="20px">
 					<a href="https://www.linkedin.com/in/samuel-l%C3%A9obon-457a61228/">
 						<svg width="48" height="48" viewBox="0 0 48 48">

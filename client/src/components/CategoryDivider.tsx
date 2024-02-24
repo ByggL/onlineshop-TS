@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Divider, AbsoluteCenter } from "@chakra-ui/react";
 
-export function CategoryDivider(props) {
+export function CategoryDivider(props: any) {
 	return (
 		<Box position="relative" padding="10">
 			<Divider size="2xl" />

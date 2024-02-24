@@ -9,6 +9,8 @@ export function Footer() {
 				<Center>© 2024 Samuel Léobon, All Rights Reserved</Center>{" "}
 				<br />
 				<Center>Powered by : React, Chakra UI, Express</Center>
+                <br/>
+                <Center>Written in : TypeScript</Center>
 			</Box>
 		</footer>
 	);
